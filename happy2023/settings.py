@@ -58,7 +58,8 @@ ROOT_URLCONF = 'happy2023.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates','django/contrib/admin/templates/',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
