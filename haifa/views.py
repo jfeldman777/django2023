@@ -14,7 +14,7 @@ def home(request):
 
 def login(request):
     form = AuthenticationForm()
-    return render(request, 'admin/login.html', {'form': form})
+    return render(request, 'login.html', {'form': form})
 
 def login_view(request):
     if request.method == 'POST':

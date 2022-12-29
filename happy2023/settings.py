@@ -58,8 +58,10 @@ ROOT_URLCONF = 'happy2023.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates','django/contrib/admin/templates/',
-        ],
+        'DIRS': ['templates',
+        'C:\\AlterEgo\\python\\Lib\\site-packages\\django\\contrib\\admin\\templates\\admin'],
+
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,6 +76,24 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'happy2023.wsgi.application'
 
+LOGGING = {
+    'version': 1,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '../logs/django.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
+
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
@@ -85,6 +105,10 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = 'auth.User'
+#AUTH_USER_MODEL = 'haifa.CustomUser'
+
+LOG_FILE = 'django.log'
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
